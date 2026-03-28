@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { Overlay } from "./Overlay";
+import { Overlay } from "./overlay";
 
 function mount() {
   if (document.getElementById("tweak-root")) return;

@@ -1,3 +1,4 @@
+#!/usr/bin/env bun
 import { readFileSync, existsSync, writeFileSync } from "fs";
 import { join } from "path";
 import { buildPrompt, callAi, patchFile, getSourceContext } from "@tweak/core";
