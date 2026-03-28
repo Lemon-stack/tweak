@@ -1,0 +1,15 @@
+{
+  "name": "@tweak/cli",
+  "version": "0.0.1",
+  "type": "module",
+  "bin": {
+    "tweak": "./dist/index.js"
+  },
+  "scripts": {
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build src/index.ts --outdir dist --target bun"
+  },
+  "dependencies": {
+    "@tweak/core": "workspace:*"
+  }
+}
