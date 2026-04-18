@@ -32,6 +32,7 @@ Respond with ONLY a JSON object in this exact shape — no explanation, no markd
 
 Rules:
 - startLine and endLine must be within the source context shown above
+- Source context is raw file text without line-number prefixes
 - replacement must be valid TSX/JSX that fits in place of the original lines
 - Preserve indentation exactly
 - Do not change anything outside the target lines unless strictly necessary`;

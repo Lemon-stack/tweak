@@ -9,5 +9,9 @@
   "devDependencies": {
     "@types/node": "^25.5.0",
     "bun-types": "^1.3.11"
+  },
+  "dependencies": {
+    "@tweak/cli": "link:/home/lemon/Documents/saas/tweak/packages/cli",
+    "@tweak/core": "link:/home/lemon/Documents/saas/tweak/packages/core"
   }
 }

@@ -7,10 +7,12 @@
   },
   "files": ["dist", "public"],
   "scripts": {
-    "dev": "bun run --watch src/index.ts",
-    "build": "bun build src/index.ts --outdir dist --target bun"
+    "build": "pnpm exec tsc --project tsconfig.json"
   },
   "dependencies": {
     "@tweak/core": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
   }
 }

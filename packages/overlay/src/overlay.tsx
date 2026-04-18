@@ -79,6 +79,11 @@ export function Overlay() {
 
   async function submitEdit() {
     if (!prompt || !instruction.trim()) return;
+    const targetLine = prompt.source.lineNumber;
+    const lineRadius = 6;
+    const startLine = Math.max(1, targetLine - lineRadius);
+    const endLine = targetLine + lineRadius;
+
     setLoading(true);
     setStatus(null);
     try {
@@ -87,8 +92,8 @@ export function Overlay() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           filePath: prompt.source.filePath,
-          startLine: prompt.source.lineNumber,
-          endLine: prompt.source.lineNumber,
+          startLine,
+          endLine,
           sourceContext: "",
           renderedHtml: prompt.renderedHtml,
           componentTree: prompt.source.componentTree,
@@ -97,7 +102,6 @@ export function Overlay() {
       });
       const data = await res.json();
       if (!res.ok) throw new Error(data.error ?? "Unknown error");
-      setStatus("Done!");
       setPrompt(null);
       setInstruction("");
     } catch (err) {
